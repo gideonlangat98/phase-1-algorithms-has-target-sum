@@ -1,6 +1,26 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+
+  for (let i = 0; i < array.length; i ++ ) {
+
+    //loop through the rest of the array
+    const num1 = target - array[i];
+
+    //Checking total if it matches
+    for(let l = i + 1; l < array.length; l ++ ) {
+
+      //Checking the total if it matches
+      if(array[l] === num1) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
+
+console.log (hasTargetSum([3, 8, 12, 4, 11, 7], 10));
+console.log (hasTargetSum([22, 19, 4, 6, 30], 25));
+console.log (hasTargetSum([-7, 10, 4, 8], 3));
 
 /* 
   Write the Big O time complexity of your function here
